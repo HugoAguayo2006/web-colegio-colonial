@@ -58,7 +58,6 @@ export default function Inicio() {
 
   const [idx, setIdx] = useState(0);
   const [carouselReady, setCarouselReady] = useState(false);
-  const [facilityVideoReady, setFacilityVideoReady] = useState(false);
 
   useEffect(() => {
     if (!slides.length) return;
@@ -458,27 +457,14 @@ export default function Inicio() {
             <h3 className="cc-panelTitle-1">Nuestras Instalaciones.</h3>
             <p className="cc-panelSub">Una vista de nuestras maravillosas instalaciones.</p>
 
-            <div className="cc-videoFrame" aria-label="Video de instalaciones">
-              {facilityVideoReady ? (
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/Eg_MtjuNGtM?autoplay=1&rel=0&modestbranding=1&playsinline=1"
-                  title="Video Colegio Colonial"
-                  loading="lazy"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              ) : (
-                <button
-                  className="cc-videoPoster"
-                  type="button"
-                  onClick={() => setFacilityVideoReady(true)}
-                  aria-label="Reproducir video de instalaciones"
-                >
-                  <span className="cc-videoPoster__play" aria-hidden="true" />
-                  <span className="cc-videoPoster__title">Ver instalaciones</span>
-                </button>
-              )}
+            <div className="cc-videoFrame" aria-label="Video de YouTube">
+              <iframe
+                src="https://www.youtube.com/embed/Eg_MtjuNGtM"
+                title="Video Colegio Colonial"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
 
             <div className="cc-videoActions">

@@ -1,14 +1,7 @@
-import { useState } from "react";
 import "./Footer.css";
 import Reveal from "../Reveal"; // ✅ ajusta la ruta si tu Reveal está en otra carpeta
 
 export default function Footer() {
-  const [mapReady, setMapReady] = useState(false);
-  const mapUrl =
-    "https://www.google.com/maps?q=C.+16+de+Septiembre+84,+La+Santa+Cruz,+La+Cruz,+76090+Santiago+de+Quer%C3%A9taro,+Quer%C3%A9taro,+M%C3%A9xico&output=embed";
-  const directionsUrl =
-    "https://www.google.com/maps/place/C.+16+de+Septiembre+84,+La+Santa+Cruz,+La+Cruz,+76090+Santiago+de+Quer%C3%A9taro,+Qro./@20.5956146,-100.3874025,17z";
-
   return (
     <footer className="ingf">
       {/* fondo azul */}
@@ -139,32 +132,17 @@ Calle 16 de Septiembre 84, Col. Centro, Querétaro Centro, Mexico
             <div className="ingf__mapWrap">
               <div className="ingf__mapTop">
                 <span className="ingf__mapTitle">Ubicación</span>
-                <span className="ingf__mapHint">
-                  {mapReady ? "Arrastra para explorar" : "Mapa bajo demanda"}
-                </span>
+                <span className="ingf__mapHint">Arrastra para explorar</span>
               </div>
 
-              {mapReady ? (
-                <iframe
-                  className="ingf__map"
-                  title="Mapa Colegio Colonial"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src={mapUrl}
-                />
-              ) : (
-                <div className="ingf__mapPlaceholder">
-                  <p>Calle 16 de Septiembre 84, Centro, Querétaro.</p>
-                  <div className="ingf__mapActions">
-                    <button type="button" onClick={() => setMapReady(true)}>
-                      Cargar mapa
-                    </button>
-                    <a href={directionsUrl} target="_blank" rel="noreferrer">
-                      Abrir en Google Maps
-                    </a>
-                  </div>
-                </div>
-              )}
+              <iframe
+                className="ingf__map"
+                title="Mapa Colegio Colonial"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=C.+16+de+Septiembre+84,+La+Santa+Cruz,+La+Cruz,+76090+Santiago+de+Quer%C3%A9taro,+Quer%C3%A9taro,+M%C3%A9xico&output=embed
+"
+              />
             </div>
           </Reveal>
 

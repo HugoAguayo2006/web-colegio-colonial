@@ -284,49 +284,6 @@
   display: block;
 }
 
-.ingf__mapPlaceholder {
-  min-height: 320px;
-  display: grid;
-  place-content: center;
-  gap: 16px;
-  padding: 28px;
-  text-align: center;
-  background:
-    linear-gradient(rgba(47, 62, 82, .88), rgba(47, 62, 82, .72)),
-    url("/images/inicio/hero-3-mobile.webp") center / cover;
-}
-
-.ingf__mapPlaceholder p {
-  max-width: 520px;
-  margin: 0;
-  color: rgba(255,255,255,.92);
-  font-weight: 800;
-}
-
-.ingf__mapActions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.ingf__mapActions button,
-.ingf__mapActions a {
-  border: 1px solid rgba(255,255,255,.28);
-  border-radius: 999px;
-  padding: 10px 14px;
-  color: #fff;
-  background: rgba(170, 16, 5, .95);
-  font: inherit;
-  font-weight: 900;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.ingf__mapActions a {
-  background: rgba(255,255,255,.12);
-}
-
 /* follow */
 .ingf__follow {
   margin-top: 24px;
