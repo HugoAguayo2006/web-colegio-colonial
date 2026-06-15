@@ -12,7 +12,7 @@ export default function IntercolegialesVideoHero({
   const forcedStart = Math.max(0, Number(start) || 0);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [posterSrc, setPosterSrc] = useState(
-    `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`
+    `https://i.ytimg.com/vi/${youtubeId}/sddefault.jpg`
   );
   const [cb] = useState(0);
 
@@ -22,7 +22,7 @@ export default function IntercolegialesVideoHero({
     : `https://www.youtube.com/watch?v=${youtubeId}`;
 
   useEffect(() => {
-    setPosterSrc(`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`);
+    setPosterSrc(`https://i.ytimg.com/vi/${youtubeId}/sddefault.jpg`);
   }, [youtubeId]);
 
   /* =======================
@@ -199,7 +199,10 @@ const labelSport = (k) => {
               <button
                 className="inter-video__poster"
                 type="button"
-                onClick={() => setVideoLoaded(true)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setVideoLoaded(true);
+                }}
                 aria-label="Reproducir video de Intercolegiales 2026"
               >
                 <img
@@ -207,6 +210,7 @@ const labelSport = (k) => {
                   src={posterSrc}
                   alt=""
                   aria-hidden="true"
+                  data-nozoom
                   loading="lazy"
                   decoding="async"
                   onError={() => {
