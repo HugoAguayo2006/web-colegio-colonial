@@ -141,6 +141,7 @@
   transform: translateY(clamp(72px, 9vw, 116px));
 }
 
+
 .inter-video__play::after {
   content: "";
   position: absolute;
