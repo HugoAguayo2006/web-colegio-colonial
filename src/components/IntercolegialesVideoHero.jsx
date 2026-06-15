@@ -5,15 +5,25 @@ export default function IntercolegialesVideoHero({
   title = "Intercolegiales 2026",
   subtitle = "Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a vivir una jornada de competencia, convivencia y espíritu deportivo.",
   youtubeId = "VNn2FhvNGTI",
-  start = 0, // lo dejamos por compatibilidad, pero lo vamos a ignorar si quieres forzar 0
+  start = 0,
   logoSrc = "/logo.svg",
   logoAlt = "Escudo",
 }) {
-  const forcedStart = Number(start) || 0;
+  const forcedStart = Math.max(0, Number(start) || 0);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [posterSrc, setPosterSrc] = useState(
+    `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`
+  );
   const [cb] = useState(0);
 
   const embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${forcedStart}&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1&cb=${cb}`;
+  const watchUrl = forcedStart
+    ? `https://www.youtube.com/watch?v=${youtubeId}&t=${forcedStart}s`
+    : `https://www.youtube.com/watch?v=${youtubeId}`;
+
+  useEffect(() => {
+    setPosterSrc(`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`);
+  }, [youtubeId]);
 
   /* =======================
      DATA CARRUSEL
@@ -164,7 +174,7 @@ const labelSport = (k) => {
           <div className="inter-video__actions">
             <a
               className="inter-video__secondary"
-              href={`https://www.youtube.com/watch?v=${youtubeId}&t=${forcedStart}s`}
+              href={watchUrl}
               target="_blank"
               rel="noreferrer"
             >
@@ -192,6 +202,17 @@ const labelSport = (k) => {
                 onClick={() => setVideoLoaded(true)}
                 aria-label="Reproducir video de Intercolegiales 2026"
               >
+                <img
+                  className="inter-video__posterImg"
+                  src={posterSrc}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  onError={() => {
+                    setPosterSrc(`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`);
+                  }}
+                />
                 <span className="inter-video__play" aria-hidden="true" />
                 <span className="inter-video__posterText">Reproducir video</span>
               </button>

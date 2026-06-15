@@ -226,7 +226,7 @@ export default function Inicio() {
               title="Intercolegiales 2026"
               subtitle="Invitamos a los colegios de la Orden del Verbo Encarnado y del Santísimo Sacramento a disputar torneos deportivos y vivir una experiencia de unidad, respeto y convivencia."
               youtubeId="VNn2FhvNGTI"
-              start={44}
+              start={0}
               ctaHref="/intercolegiales/inscripcion"
               logoSrc="/images/logo-escudo.webp"
               logoAlt="Escudo ING"
