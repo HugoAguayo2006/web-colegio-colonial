@@ -621,6 +621,7 @@ onLoad={(map) => {
 ¿Hay algún problema con la información mostrada en el mapa? Presiona aquí.
 </a>
 
+
           {/* ✅ MÓVIL + iPad: tarjeta DEBAJO del mapa */}
           {selected && isTouchDevice && (
             <div className="camp_belowCard">
