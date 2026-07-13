@@ -698,7 +698,7 @@
   .ing-logo {
     width: 52px !important;
     height: 52px !important;
-    margin-left: 0 !important;
+    margin-left: -18px !important;
   }
 
   /* Título: usa versión corrida */
@@ -812,7 +812,7 @@
   .ing-logo {
     width: 102px !important;
     height: 102px !important;
-    margin-left: 0 !important;
+    margin-left: -13px !important;
   }
 
   /* título corrido */
@@ -928,7 +928,7 @@
   .ing-logo {
     width: 180px;
     height: 180px;
-    margin-left: -20px;
+    margin-left: -8px;
     margin-right: -40px;
   }
 
@@ -938,7 +938,7 @@
   .ing-logo {
     width: 180px;
     height: 180px;
-    margin-left: -20px;
+    margin-left: -5px;
     margin-right: -40px;
   }
     .ing-link {
