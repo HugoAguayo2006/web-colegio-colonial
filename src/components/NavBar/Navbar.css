@@ -172,6 +172,11 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
+.ing-ddBtn--decorative {
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Dropdown desktop */
 .ing-dropdown {
   position: absolute;

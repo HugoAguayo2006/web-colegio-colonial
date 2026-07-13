@@ -278,15 +278,12 @@ export default function Navbar() {
                     </NavLink>
 
                     {hasChildren && (
-                      <button
-                        type="button"
-                        className="ing-ddBtn"
-                        aria-label={`Abrir submenú de ${item.label}`}
-                        aria-expanded={isOpen}
-                        onClick={() => toggleDropdown(id)}
+                      <span
+                        className="ing-ddBtn ing-ddBtn--decorative"
+                        aria-hidden="true"
                       >
                         <ChevronDownIcon />
-                      </button>
+                      </span>
                     )}
                   </div>
 
