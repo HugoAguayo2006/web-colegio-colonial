@@ -26,7 +26,10 @@ export default function JeanneFloat() {
     };
   }, []);
 
-  const rootClass = ["jeanne-float", isApple ? "jeanne-apple" : ""]
+  const rootClass = [
+    "jeanne-float",
+    isApple ? "jeanne-apple" : "",
+  ]
     .filter(Boolean)
     .join(" ");
 

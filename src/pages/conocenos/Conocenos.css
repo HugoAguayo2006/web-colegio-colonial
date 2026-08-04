@@ -765,6 +765,11 @@
     gap: 22px;
   }
   .cc-hero-copy{ text-align:center; }
+  .cc-hero-copy h1,
+  .cc-hero-copy p{
+    margin-left: auto;
+    margin-right: auto;
+  }
   .cc-hero-actions{ justify-content:center; }
   .cc-hero-stats{ margin: 0 auto; }
 }
@@ -978,6 +983,11 @@
     gap: 22px !important;
   }
   .cc-hero-copy{ text-align:center !important; }
+  .cc-hero-copy h1,
+  .cc-hero-copy p{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
   .cc-hero-actions{ justify-content:center !important; }
   .cc-hero-stats{ margin: 0 auto !important; }
 }

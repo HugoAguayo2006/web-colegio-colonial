@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import Navbar from "./components/NavBar/Navbar.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import { applyRouteMeta } from "./utils/routeMeta.js";
 
 const Footer = lazy(() => import("./components/Footer/Footer.jsx"));
 const ImageModal = lazy(() => import("./components/ImageModal.jsx"));
@@ -32,6 +33,10 @@ export default function App() {
   const location = useLocation();
   const isHome = location.pathname === "/" || location.pathname === "/inicio";
   const nonCriticalReady = useIdleReady();
+
+  useEffect(() => {
+    applyRouteMeta(location.pathname);
+  }, [location.pathname]);
 
   const isNotFoundPage =
     location.pathname !== "/" &&

@@ -167,7 +167,7 @@ const labelSport = (k) => {
       {/* ================= VIDEO HERO ================= */}
       <div className="inter-video__wrap">
         <header className="inter-video__head">
-          <h1 className="inter-video__title">{title}</h1>
+          <h2 className="inter-video__title">{title}</h2>
 
           {subtitle && <p className="inter-video__subtitle">{subtitle}</p>}
 

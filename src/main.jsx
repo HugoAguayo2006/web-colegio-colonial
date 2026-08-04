@@ -3,10 +3,8 @@ import React, { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// ⛔ Helmet comentado por debug
 import { HelmetProvider } from "react-helmet-async";
 
-// ✅ SOLO lo mínimo para que cargue
 import App from "./App.jsx";
 import Inicio from "./pages/Inicio.jsx";
 
@@ -31,7 +29,6 @@ const Modelo = lazy(() => import("./pages/conocenos/Modelo.jsx"));
 const CCT = lazy(() => import("./pages/conocenos/CCT.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
-// ✅ CSS (puedes comentarlo si quieres descartar estilos)
 import "./styles.css";
 
 /* =====================================================
@@ -55,38 +52,30 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Inicio /> },
 
-      // ⛔ Niveles
-
        { path: "niveles/primaria", element: lazyPage(<Primaria />) },
       { path: "niveles/secundaria", element: lazyPage(<Secundaria />) },
        { path: "niveles", element: lazyPage(<Niveles />) },
 
-      // ⛔ Inscripciones
        { path: "inscripciones/primaria", element: lazyPage(<Inscripcion_Primaria />) },
       { path: "inscripciones/secundaria", element: lazyPage(<Inscripcion_Secundaria />) },
        { path: "inscripciones", element: lazyPage(<Inscripcion />) },
 
-      // ⛔ Contacto / Calendario
        { path: "contacto", element: lazyPage(<Contacto />) },
       { path: "calendario", element: lazyPage(<Calendario />) },
 
-      // ⛔ Vida ING
        { path: "vida-colonial", element: lazyPage(<COLONIAL />) },
         { path: "vida-colonial/eventos", element: lazyPage(<Eventos />) },
        { path: "vida-colonial/galeria", element: lazyPage(<Galeria />) },
        { path: "vida-colonial/extracurriculares", element: lazyPage(<Actividades />) },
         { path: "vida-colonial/otros-servicios", element: lazyPage(<Otros />) },
 
-      // ⛔ Conócenos
        { path: "conocenos/mision-vision", element: lazyPage(<VM />) },
      { path: "conocenos/valores", element: lazyPage(<Valores />) },
-      // { path: "conocenos/historia", element: <Historia /> },
      { path: "conocenos/otros-campus", element: lazyPage(<Campus />) },
      { path: "conocenos/modelo-educativo", element: lazyPage(<Modelo />) },
       { path: "conocenos/clave-de-centro-de-trabajo", element: lazyPage(<CCT />) },
        { path: "conocenos", element: lazyPage(<Conocenos />) },
 
-      // ⛔ NotFound
        { path: "*", element: lazyPage(<NotFound />) },
     ],
   },
@@ -97,7 +86,7 @@ function lazyPage(element) {
 }
 
 /* =====================================================
-   🚀 Render (sin Helmet por ahora)
+   🚀 Render
    ===================================================== */
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -163,14 +163,14 @@ export default function Navbar() {
             fetchPriority="high"
           />
 
-          <h1 className="ing-title">
+          <div className="ing-title">
             <span className="ing-titleLines">
               Colegio <span className="ing-titleBreak" />
               Colonial <span className="ing-titleBreak" />
             </span>
 
             <span className="ing-titleInline">Colegio Colonial</span>
-          </h1>
+          </div>
         </NavLink>
 
         {/* Redes (externo) + Hamburguesa */}

@@ -283,6 +283,12 @@
   transform:translateY(-3px);
 }
 
+.ct_submit:disabled{
+  cursor:not-allowed;
+  opacity:.72;
+  transform:none;
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:950px){
   .ct_container{

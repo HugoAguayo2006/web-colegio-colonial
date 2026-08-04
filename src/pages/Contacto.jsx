@@ -15,11 +15,14 @@ import { Helmet } from "react-helmet-async";
 export default function ContactoPage() {
 
   const [status, setStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
     try {
+      setIsSubmitting(true);
       await emailjs.sendForm(
         "service_394osy1",
         "template_01r406p",
@@ -29,9 +32,10 @@ export default function ContactoPage() {
 
       setStatus("success");
       e.target.reset();
-    } catch (error) {
-      console.error("Error al enviar:", error);
+    } catch {
       setStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -260,8 +264,8 @@ export default function ContactoPage() {
                 />
               </label>
 
-              <button className="ct_submit" type="submit">
-                Enviar mensaje
+              <button className="ct_submit" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </button>
 
 {status === "success" && (
