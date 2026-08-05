@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "calendar:generate": "node scripts/generate-calendar.mjs",
     "optimize:images:check": "node scripts/optimize-images.mjs --check",
     "optimize:images": "node scripts/optimize-images.mjs"
   },

@@ -534,6 +534,7 @@
   font-weight: 1000;
   color: var(--cc-blueDeep);
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .listRow__date .d2{
   display: block;

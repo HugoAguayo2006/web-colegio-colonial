@@ -54,6 +54,11 @@ function addMonths(d, delta) {
   x.setHours(0, 0, 0, 0);
   return x;
 }
+function addDays(d, delta) {
+  const x = new Date(d);
+  x.setDate(x.getDate() + delta);
+  return x;
+}
 function monthLabel(d) {
   const text = d.toLocaleString("es-MX", { month: "long", year: "numeric" });
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -104,6 +109,20 @@ function formatDayLong(dateObj) {
   });
 }
 
+function formatDateRange(start, end) {
+  const startLabel = start.toLocaleDateString("es-MX", {
+    day: "2-digit",
+    month: "short",
+  });
+  if (isSameDay(start, end)) return startLabel;
+
+  const endLabel = end.toLocaleDateString("es-MX", {
+    day: "2-digit",
+    month: "short",
+  });
+  return `${startLabel}–${endLabel}`;
+}
+
 function getLevelLabel(levelKey, fallback = "") {
   if (levelKey === "all") return "Todos";
   return LEVELS.find((x) => x.key === levelKey)?.label || fallback;
@@ -134,12 +153,15 @@ export default function Calendario() {
     return (EVENTS || [])
       .map((e) => {
         const d = parseISO(e.date);
+        const endDate = parseISO(e.endDate || e.date);
         const isoFixed = toISODate(d);
 
         return {
           ...e,
           _iso: isoFixed,
           _dateObj: d,
+          _endDateObj: endDate,
+          _endISO: toISODate(endDate),
           _timeLabel: e.start ? `${e.start}${e.end ? `–${e.end}` : ""}` : "",
           _levelKey: normalizeLevel(e.level),
         };
@@ -159,9 +181,10 @@ export default function Calendario() {
       }
 
       if (when !== "all") {
-        const isUpcoming = ev._iso >= todayISO;
-        if (when === "upcoming" && !isUpcoming) return false;
-        if (when === "past" && isUpcoming) return false;
+        const hasUpcomingDays = ev._endISO >= todayISO;
+        const hasPastDays = ev._iso < todayISO;
+        if (when === "upcoming" && !hasUpcomingDays) return false;
+        if (when === "past" && !hasPastDays) return false;
       }
 
       if (!q) return true;
@@ -181,15 +204,22 @@ export default function Calendario() {
       for (const d of week) map.set(toISODate(d), []);
     }
     for (const ev of filteredEvents) {
-      if (!map.has(ev._iso)) map.set(ev._iso, []);
-      map.get(ev._iso).push(ev);
+      for (let day = ev._dateObj; day <= ev._endDateObj; day = addDays(day, 1)) {
+        if (ev.weekdaysOnly && [0, 6].includes(day.getDay())) continue;
+        const iso = toISODate(day);
+        const todayISO = toISODate(today);
+        if (when === "upcoming" && iso < todayISO) continue;
+        if (when === "past" && iso >= todayISO) continue;
+        if (!map.has(iso)) map.set(iso, []);
+        map.get(iso).push(ev);
+      }
     }
     for (const [k, arr] of map) {
       arr.sort((a, b) => (a.start || "").localeCompare(b.start || ""));
       map.set(k, arr);
     }
     return map;
-  }, [filteredEvents, monthGrid]);
+  }, [filteredEvents, monthGrid, when, today]);
 
   // Dots: dayISO => tiene eventos
   const dayHasEvents = useMemo(() => {
@@ -219,7 +249,9 @@ export default function Calendario() {
     const monthISO = `${visibleMonth.getFullYear()}-${pad2(
       visibleMonth.getMonth() + 1
     )}`;
-    const total = filteredEvents.filter((e) => e._iso.startsWith(monthISO)).length;
+    const total = filteredEvents.filter(
+      (e) => e._iso <= `${monthISO}-31` && e._endISO >= `${monthISO}-01`
+    ).length;
     return total;
   }, [visibleMonth, filteredEvents]);
 
@@ -595,15 +627,16 @@ export default function Calendario() {
                     >
                       <div className="listRow__date">
                         <span className="d1">
-                          {e._dateObj.toLocaleDateString("es-MX", {
-                            day: "2-digit",
-                            month: "short",
-                          })}
+                          {formatDateRange(e._dateObj, e._endDateObj)}
                         </span>
                         <span className="d2">
-                          {e._dateObj.toLocaleDateString("es-MX", {
-                            weekday: "short",
-                          })}
+                          {isSameDay(e._dateObj, e._endDateObj)
+                            ? e._dateObj.toLocaleDateString("es-MX", {
+                                weekday: "short",
+                              })
+                            : e.weekdaysOnly
+                            ? "Lun–Vie"
+                            : "Varios días"}
                         </span>
                       </div>
                     </div>

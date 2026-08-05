@@ -1173,5 +1173,41 @@ export const EVENTS = [
     end: "13:00",
     level: "all",
   },
+  {
+    id: "e156",
+    title: "Servicio de Oficinas",
+    date: "2026-08-03",
+    endDate: "2026-08-28",
+    weekdaysOnly: true,
+    start: "09:00",
+    end: "13:00",
+    level: "all",
+  },
+  {
+    id: "e176",
+    title: "Felicidades Mtra. Paty",
+    date: "2026-08-15",
+    level: "all",
+    description: "Celebración de cumpleaños.",
+  },
+  {
+    id: "e177",
+    title: "Día de la Asunción",
+    date: "2026-08-15",
+    level: "all",
+  },
+  {
+    id: "e178",
+    title: "Fase Intensiva de Consejo Técnico",
+    date: "2026-08-24",
+    endDate: "2026-08-28",
+    level: "all",
+  },
+  {
+    id: "e183",
+    title: "Inicio del Ciclo Escolar",
+    date: "2026-08-31",
+    level: "all",
+  },
 
 ];
