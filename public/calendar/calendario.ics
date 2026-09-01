@@ -7,49 +7,113 @@ X-WR-CALNAME:Colegio Colonial - Calendario Escolar
 X-WR-TIMEZONE:America/Mexico_City
 
 BEGIN:VEVENT
-UID:e156@colegiocolonial.edu.mx
-DTSTAMP:20260805T000000Z
-DTSTART;TZID=America/Mexico_City:20260803T090000
-DTEND;TZID=America/Mexico_City:20260803T130000
-RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;COUNT=20
-SUMMARY:Servicio de Oficinas
+UID:e184@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260901T090000
+DTEND;TZID=America/Mexico_City:20260901T100000
+SUMMARY:Eucaristía de inicio de ciclo escolar
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e176@colegiocolonial.edu.mx
-DTSTAMP:20260805T000000Z
-DTSTART;TZID=America/Mexico_City:20260815T090000
-DTEND;TZID=America/Mexico_City:20260815T100000
-SUMMARY:Felicidades Mtra. Paty
+UID:e185@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260908T090000
+DTEND;TZID=America/Mexico_City:20260908T100000
+SUMMARY:Natividad de la Virgen María
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e186@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260911T100000
+DTEND;TZID=America/Mexico_City:20260911T110000
+SUMMARY:Aniversario luctuoso de la Venerable Madre Jeanne de Matel
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e187@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260915T120000
+DTEND;TZID=America/Mexico_City:20260915T130000
+SUMMARY:Acto cívico Mañanita Mexicana
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e188@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260916T090000
+DTEND;TZID=America/Mexico_City:20260916T100000
+SUMMARY:Suspensión de clases
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e189@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260921T090000
+DTEND;TZID=America/Mexico_City:20260921T100000
+SUMMARY:Honores a la bandera 5° de Primaria
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e190@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260921T090000
+DTEND;TZID=America/Mexico_City:20260921T100000
+SUMMARY:Felicidades Claudia
 DESCRIPTION:Celebración de cumpleaños.
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e177@colegiocolonial.edu.mx
-DTSTAMP:20260805T000000Z
-DTSTART;TZID=America/Mexico_City:20260815T090000
-DTEND;TZID=America/Mexico_City:20260815T100000
-SUMMARY:Día de la Asunción
+UID:e191@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260924T090000
+DTEND;TZID=America/Mexico_City:20260924T100000
+SUMMARY:Honores Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e178@colegiocolonial.edu.mx
-DTSTAMP:20260805T000000Z
-DTSTART;VALUE=DATE:20260824
-DTEND;VALUE=DATE:20260829
-SUMMARY:Fase Intensiva de Consejo Técnico
+UID:e192@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260925T090000
+DTEND;TZID=America/Mexico_City:20260925T100000
+SUMMARY:Consejo Técnico
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e183@colegiocolonial.edu.mx
-DTSTAMP:20260805T000000Z
-DTSTART;TZID=America/Mexico_City:20260831T090000
-DTEND;TZID=America/Mexico_City:20260831T100000
-SUMMARY:Inicio del Ciclo Escolar
+UID:e193@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260926T090000
+DTEND;TZID=America/Mexico_City:20260926T100000
+SUMMARY:Felicidades Mtra. Cristina
+DESCRIPTION:Celebración de cumpleaños.
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e194@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260928T090000
+DTEND;TZID=America/Mexico_City:20260928T100000
+SUMMARY:Felicidades Adriana
+DESCRIPTION:Celebración de cumpleaños.
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e195@colegiocolonial.edu.mx
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Mexico_City:20260928T090000
+DTEND;TZID=America/Mexico_City:20260928T100000
+SUMMARY:Honores a la bandera 4° de Primaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
