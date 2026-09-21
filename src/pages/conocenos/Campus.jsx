@@ -518,6 +518,8 @@ onLoad={(map) => {
                 rotateControl: true,
                 keyboardShortcuts: true,
                 gestureHandling: "cooperative",
+                // Evita abrir fichas de lugares externos que Google no puede cargar.
+                clickableIcons: false,
                 tilt: 0,
                 heading: 0,
               }}
