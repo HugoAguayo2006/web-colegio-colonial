@@ -7,113 +7,196 @@ X-WR-CALNAME:Colegio Colonial - Calendario Escolar
 X-WR-TIMEZONE:America/Mexico_City
 
 BEGIN:VEVENT
-UID:e184@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260901T090000
-DTEND;TZID=America/Mexico_City:20260901T100000
-SUMMARY:Eucaristía de inicio de ciclo escolar
+UID:e196@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261001T090000
+DTEND;TZID=America/Mexico_City:20261001T100000
+SUMMARY:Santa Teresita del Niño Jesús
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e185@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260908T090000
-DTEND;TZID=America/Mexico_City:20260908T100000
-SUMMARY:Natividad de la Virgen María
+UID:e197@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261001T090000
+DTEND;TZID=America/Mexico_City:20261001T100000
+SUMMARY:Inicio de venta de misiones
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e186@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260911T100000
-DTEND;TZID=America/Mexico_City:20260911T110000
-SUMMARY:Aniversario luctuoso de la Venerable Madre Jeanne de Matel
+UID:e198@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261002T090000
+DTEND;TZID=America/Mexico_City:20261002T100000
+SUMMARY:Día de los Ángeles Custodios
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e187@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260915T120000
-DTEND;TZID=America/Mexico_City:20260915T130000
-SUMMARY:Acto cívico Mañanita Mexicana
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e188@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260916T090000
-DTEND;TZID=America/Mexico_City:20260916T100000
-SUMMARY:Suspensión de clases
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e189@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260921T090000
-DTEND;TZID=America/Mexico_City:20260921T100000
-SUMMARY:Honores a la bandera 5° de Primaria
-LOCATION:Colegio Colonial
-END:VEVENT
-
-BEGIN:VEVENT
-UID:e190@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260921T090000
-DTEND;TZID=America/Mexico_City:20260921T100000
-SUMMARY:Felicidades Claudia
+UID:e199@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261004T090000
+DTEND;TZID=America/Mexico_City:20261004T100000
+SUMMARY:Felicidades Mtra. Gabriela
 DESCRIPTION:Celebración de cumpleaños.
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e191@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260924T090000
-DTEND;TZID=America/Mexico_City:20260924T100000
-SUMMARY:Honores Secundaria
+UID:e200@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261005T090000
+DTEND;TZID=America/Mexico_City:20261005T100000
+SUMMARY:Honores a la bandera
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e192@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260925T090000
-DTEND;TZID=America/Mexico_City:20260925T100000
-SUMMARY:Consejo Técnico
+UID:e201@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261010
+SUMMARY:Semana de exámenes de Primaria y Secundaria
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e193@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260926T090000
-DTEND;TZID=America/Mexico_City:20260926T100000
-SUMMARY:Felicidades Mtra. Cristina
+UID:e202@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261010T090000
+DTEND;TZID=America/Mexico_City:20261010T100000
+SUMMARY:Reunión previa de Intercolegiales\, Apaseo el Grande
+DESCRIPTION:Maestros de Educación Física.
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e203@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261012T090000
+DTEND;TZID=America/Mexico_City:20261012T100000
+SUMMARY:Acto cívico del Día de la Raza
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e204@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261015T190000
+DTEND;TZID=America/Mexico_City:20261015T200000
+SUMMARY:Eucaristía en Catedral por la patria\, Instituto y Colegio Colonial
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e205@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261018T090000
+DTEND;TZID=America/Mexico_City:20261018T100000
+SUMMARY:Felicidades Mtra. Cynthia
 DESCRIPTION:Celebración de cumpleaños.
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e194@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260928T090000
-DTEND;TZID=America/Mexico_City:20260928T100000
-SUMMARY:Felicidades Adriana
-DESCRIPTION:Celebración de cumpleaños.
+UID:e206@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261019T090000
+DTEND;TZID=America/Mexico_City:20261019T100000
+SUMMARY:Honores a la bandera
 LOCATION:Colegio Colonial
 END:VEVENT
 
 BEGIN:VEVENT
-UID:e195@colegiocolonial.edu.mx
-DTSTAMP:20260901T000000Z
-DTSTART;TZID=America/Mexico_City:20260928T090000
-DTEND;TZID=America/Mexico_City:20260928T100000
-SUMMARY:Honores a la bandera 4° de Primaria
+UID:e207@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261019T090000
+DTEND;TZID=America/Mexico_City:20261019T100000
+SUMMARY:Encuentro con Cristo (4° de Primaria)
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e208@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261020T090000
+DTEND;TZID=America/Mexico_City:20261020T100000
+SUMMARY:Encuentro con Cristo (1° de Primaria)
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e209@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261021T090000
+DTEND;TZID=America/Mexico_City:20261021T100000
+SUMMARY:Encuentro con Cristo (3° de Primaria)
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e210@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261022T090000
+DTEND;TZID=America/Mexico_City:20261022T100000
+SUMMARY:Encuentro con Cristo (2° de Primaria)
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e211@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261023T090000
+DTEND;TZID=America/Mexico_City:20261023T100000
+SUMMARY:Capacitación de docentes de Primaria y Secundaria
+DESCRIPTION:Suspensión de labores.
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e212@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261028T093000
+DTEND;TZID=America/Mexico_City:20261028T103000
+SUMMARY:Rosario misionero
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e213@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261029T120000
+DTEND;TZID=America/Mexico_City:20261029T130000
+SUMMARY:Altar de muertos y kermés
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e214@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261030T090000
+DTEND;TZID=America/Mexico_City:20261030T100000
+SUMMARY:C.T.E.
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e215@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261030T090000
+DTEND;TZID=America/Mexico_City:20261030T100000
+SUMMARY:Reunión de asesores y coordinadores MSVE
+LOCATION:Colegio Colonial
+END:VEVENT
+
+BEGIN:VEVENT
+UID:e216@colegiocolonial.edu.mx
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=America/Mexico_City:20261031T090000
+DTEND;TZID=America/Mexico_City:20261031T100000
+SUMMARY:Felicidades Mtra. Fabiola
+DESCRIPTION:Celebración de cumpleaños.
 LOCATION:Colegio Colonial
 END:VEVENT
 

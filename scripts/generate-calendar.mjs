@@ -3,7 +3,7 @@ import { EVENTS } from "../src/data/events.js";
 
 const calendarPath = new URL("../public/calendar/calendario.ics", import.meta.url);
 const timeZone = "America/Mexico_City";
-const exportMonthStart = "2026-09-01";
+const exportMonthStart = "2026-10-01";
 const exportMonthEnd = "2026-10-31";
 
 const escapeText = (value) =>
@@ -54,7 +54,7 @@ const eventLines = calendarEvents.flatMap((event) => {
     return [
       "BEGIN:VEVENT",
       `UID:${event.id}@colegiocolonial.edu.mx`,
-      "DTSTAMP:20260901T000000Z",
+      "DTSTAMP:20261001T000000Z",
       `DTSTART;VALUE=DATE:${date}`,
       `DTEND;VALUE=DATE:${compactDate(addDay(event.endDate))}`,
       `SUMMARY:${escapeText(event.title)}`,
@@ -68,7 +68,7 @@ const eventLines = calendarEvents.flatMap((event) => {
   return [
     "BEGIN:VEVENT",
     `UID:${event.id}@colegiocolonial.edu.mx`,
-    "DTSTAMP:20260901T000000Z",
+    "DTSTAMP:20261001T000000Z",
     `DTSTART;TZID=${timeZone}:${date}T${compactTime(start)}`,
     `DTEND;TZID=${timeZone}:${date}T${compactTime(end)}`,
     ...(event.weekdaysOnly && isDateRange
