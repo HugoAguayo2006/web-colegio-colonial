@@ -137,7 +137,7 @@
   font-size: 15px;
 
   bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
-  z-index: 9999;
+  z-index: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -262,7 +262,7 @@
 .prim-stats{
   margin-top: 14px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -367,7 +367,7 @@
 
 .prim-grid3{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -675,3 +675,16 @@
     width: 100%;
   }
 }
+
+.prim { --blue: #2F3E52; --text: #0f1222; }
+.prim-hero__container > *, .prim-split > *, .prim-card__top > * { min-width: 0; }
+.prim-photoCard__bar { flex-wrap: wrap; gap: 8px; }
+@media (max-width: 420px) {
+  .prim-card__top { grid-template-columns: 1fr; }
+  .prim-card__title, .prim-card__text { margin-left: 0; }
+}
+.prim-dot { position: relative; }
+.prim-dot::after { content: ""; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 24px; height: 44px; }
+.prim-linkBtn { min-height: 44px; }
+
+.prim-stat { min-width: 0; overflow-wrap: anywhere; }

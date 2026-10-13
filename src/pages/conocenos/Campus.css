@@ -1,7 +1,7 @@
 /* src/pages/Campus.css */
 
 /* ===== Tokens (ajusta si quieres) ===== */
-:root{
+.camp_page, .camp_skeleton{
   --ing-blue: #2F3E52;
   --ing-red: #b51e27;
   --card: #ffffff;
@@ -778,44 +778,6 @@ height: clamp(420px, 60vh, 720px);           /* ajusta a tu gusto */
 
 
 
-@media (max-width: 680px) {
-
-}
-
-@media screen 
-  and (min-width: 300px) 
-  and (max-width: 400px) 
-  and (orientation: portrait) {
-  .camp_page{
-
-    margin-top: 20px;
-  }
-}
-
-@media screen 
-  and (min-width: 344px) 
-  and (max-width: 400px) 
-  and (orientation: portrait) {
-  .camp_page{
-
-    margin-top: -10px;
-  }
-
-}
-
-@media screen 
-  and (min-width: 535px) 
-  and (max-width: 540px) 
-  and (orientation: portrait) {
-  .camp_page{
-
-    margin-top: -25px;
-  }
-
-}
-
-
-
 
 /* =========================
    InfoWindow (tu tarjeta)
@@ -1217,3 +1179,18 @@ margin-right: 50px;
   border-radius: 18px;
   text-decoration: none;
 }
+
+.camp_filtersWide { box-sizing: border-box; }
+.camp_filtersWide .camp_label { min-width: min(200px, 100%); }
+.camp_select, .camp_input { min-width: 0; max-width: 100%; }
+.camp_grid > *, .camp_featuredTwo > * { min-width: 0; }
+.camp_card, .camp_featureCard { overflow-wrap: anywhere; }
+.camp_belowCard { box-sizing: border-box; min-width: 0; padding: 12px 0 0; }
+.camp_belowCard .camp_iwCard { width: 100% !important; max-width: 100% !important; padding: 20px 16px !important; }
+.camp_mapReportBtn, .camp_mapReportBtn-1 { box-sizing: border-box; }
+.camp_iwNiveles { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-height: 480px) and (orientation: landscape) {
+  .camp_mapCard { height: max(260px, calc(100dvh - var(--nav-height, 75px) - 32px)); }
+}
+
+.camp_belowCard, .camp_mapReportBtn-1, .camp_mobileReportWrap { grid-column: 1 / -1; }

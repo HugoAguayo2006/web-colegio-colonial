@@ -1,4 +1,4 @@
-:root{
+.gal, .lb{
   --blue: #1f2a85;
   --blueDeep: #141c63;
   --red: #b51e27;
@@ -411,32 +411,28 @@
   .gal__chip, .gal__img, .gal__ph{ transition: none; }
 }
 
-
-@media screen 
-  and (min-width: 300px) 
-  and (max-width: 400px) 
-  and (orientation: portrait) {
-
-  .gal{
-margin-top: 30px;
+/* Keep metadata, image and close controls in the viewport in both orientations. */
+.gal__container { flex: 0 1 auto; min-width: 0; }
+.gal__input { min-width: 0; }
+.gal__chip { max-width: 100%; min-height: 44px; }
+.lb { box-sizing: border-box; padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.lb__shell { box-sizing: border-box; min-width: 0; height: min(82dvh, 720px); max-height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.lb__top { position: relative; inset: auto; padding: 12px; align-items: flex-start; }
+.lb__pill { min-width: 0; overflow-wrap: anywhere; }
+.lb__topRight { flex-shrink: 0; }
+.lb__counter { white-space: nowrap; }
+.lb__close { width: 44px; height: 44px; flex-shrink: 0; }
+.lb__figure { position: static; min-height: 0; min-width: 0; padding: 0 60px 12px; grid-template-rows: minmax(0, 1fr) auto; gap: 12px; }
+.lb__img { box-sizing: border-box; min-height: 0; max-height: 100%; }
+.lb__cap { position: static; box-sizing: border-box; width: 100%; max-height: 20dvh; overflow-y: auto; }
+@media (max-width: 640px) {
+  .lb__top { flex-wrap: wrap; gap: 8px; }
+  .lb__topRight { margin-left: auto; }
+  .lb__figure { padding-inline: 12px; }
 }
-}
-
-@media screen 
-  and (min-width: 344px) 
-  and (max-width: 430px) 
-  and (orientation: portrait) {
-    .gal{
-margin-top: -5px;
-}  
-}
-
-
-@media screen 
-  and (min-width: 535px) 
-  and (max-width: 540px) 
-  and (orientation: portrait) {
-    .gal{
-margin-top: -20px;
-}  
+@media (max-height: 480px) and (orientation: landscape) {
+  .lb__shell { height: 100%; }
+  .lb__top { padding-block: 6px; }
+  .lb__figure { gap: 6px; }
+  .lb__cap { padding-block: 6px; }
 }

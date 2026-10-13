@@ -1,5 +1,5 @@
 /* ===== Paleta institucional ===== */
-:root{
+.pinc{
   --blue: #2F3E52;   /* azul institucional */
   --red:  #8B0000;   /* rojo institucional */
   --bg: #f6f7fb;
@@ -491,4 +491,13 @@
   .pbtn{
     width: 100%;
   }
+}
+
+.pinc__layout > * { min-width: 0; }
+.pinc__title { font-size: clamp(30px, 7.5vw, 62px); }
+.pinc__stickyTop, .pcost__top { flex-wrap: wrap; }
+.pbtn { box-sizing: border-box; max-width: 100%; text-align: center; }
+.pinc__stickyCard { top: calc(var(--nav-height, 192px) + 16px); }
+@media (max-width: 980px), (max-height: 800px) {
+  .pinc__stickyCard { position: relative; top: 0; }
 }

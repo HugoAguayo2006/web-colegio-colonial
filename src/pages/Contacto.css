@@ -1,4 +1,4 @@
-:root{
+.ct_page{
   --blue:#2F3E52;
   --red:#8B0000;
   --bg:#f4f6f9;
@@ -331,4 +331,14 @@
 
 .ct_msgError {
   color: #b91c1c;
+}
+
+.ct_container > *, .ct_row > *, .ct_cardBody { min-width: 0; }
+.ct_cardBody { overflow-wrap: anywhere; }
+.ct_icon { flex-shrink: 0; }
+.ct_form input, .ct_form textarea { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.ct_form textarea { resize: vertical; }
+@media (max-width: 600px) {
+  .ct_panel, .ct_formWrap { padding: clamp(16px, 4vw, 25px); }
+  .ct_form input, .ct_form textarea { font-size: 16px; }
 }

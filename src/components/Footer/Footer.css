@@ -412,8 +412,8 @@
 
 .ingf {
   position: relative;
-  width: 100vw;        /* no 100% */
-  margin-left: calc(-50vw + 50%);
+  width: 100%;        /* no 100% */
+  margin-left: 0;
 }
 
 .ingf__reveal {
@@ -423,3 +423,9 @@
 .ingf{
   margin-top: 0 !important;
 }
+
+.ingf__reveal { min-width: 0; }
+.ingf__row, .ingf__cta, .ingf__mapTop { flex-wrap: wrap; }
+.ingf__btn { text-align: center; }
+.ingf__socialIcon { flex-shrink: 0; font-size: 14px; }
+.ingf__barInner { padding-inline: 18px; }

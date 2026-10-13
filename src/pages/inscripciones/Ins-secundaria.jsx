@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import "./Ins-secundaria.css";
+import "./Ins-primaria.css";
 
 const AccordionItem = ({ title, children, tone = "blue" }) => {
   const [open, setOpen] = useState(false);

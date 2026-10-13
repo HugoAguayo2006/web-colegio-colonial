@@ -237,3 +237,15 @@
   border-left: 0 !important;
   border-right: 10px solid white !important;
 }
+
+/* Preserve the contact shortcut without covering the hero on short screens. */
+@media (max-height: 480px) and (orientation: landscape) {
+  .jeanne-float { right: max(8px, env(safe-area-inset-right, 0px)); }
+  .jeanne-float-figure { width: clamp(64px, 22dvh, 95px); left: 0; }
+  .jeanne-float-bubble { max-width: min(180px, 45vw); font-size: 12px; padding: 8px 10px; }
+  .jeanne-speech { transform: translateY(-12px) !important; margin-right: -10px; }
+}
+
+@media (max-width: 480px) {
+  .jeanne-float-bubble { font-size: 12px; }
+}

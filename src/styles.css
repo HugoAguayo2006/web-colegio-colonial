@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #8B0000;
-  overflow-x: hidden;
 }
 
 html,
@@ -18,26 +17,13 @@ body,
 
 /* Se utiliza para que el NavBar fijo no tape las demas secciones */
 .app-main {
-  padding-top: 180px;
-  min-height: calc(100vh - 80px);
+  padding-top: var(--nav-height, 192px);
+  min-height: calc(100svh - 80px);
   position: relative;
-  overflow-x: hidden;
 }
 
 .route-page {
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .app-main {
-    padding-top: 180px;
-  }
-}
-
-@media (max-width: 933px) and (orientation: landscape) {
-  .app-main {
-    padding-top: 70px !important;
-  }
 }
 
 /* ===== SOLO PARA NOT FOUND ===== */
@@ -103,4 +89,22 @@ body,
 .app-main:has(.cct-page),
 .app-main:has(.os) {
   min-height: auto;
+}
+
+/* Keep anchor targets and focused fields clear of the fixed header. */
+html { scroll-padding-top: calc(var(--nav-height, 192px) + 16px); }
+.route-page { overflow-wrap: break-word; }
+
+/* Prevent automatic form zoom on narrow touch screens. */
+@media (max-width: 767px) {
+  :is(.ct_page, .cccal, .camp_page, .gal, .ev, .exa) :is(input, textarea, select) {
+    font-size: 16px;
+  }
+}
+@media (pointer: coarse) {
+  :is(.ccchip, .cccal__today, .iconBtn, .gal__chip, .exa__clear,
+      .icc-filter, .inter-carousel__filter, .camp_btn, .camp_btnMini,
+      .camp_btnMiniGhost, .camp_iwClose, .prim-linkBtn) {
+    min-height: 44px;
+  }
 }

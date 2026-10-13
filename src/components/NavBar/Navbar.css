@@ -10,6 +10,11 @@
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
 }
 
+.ing-nav--menu-open {
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+}
+
 /* ====== FRANJA / BLOQUE AZUL ====== */
 .ing-topbar {
   height: 115px;
@@ -84,7 +89,7 @@
 }
 
 .ing-burger {
-  display: none; /* solo móvil */
+  display: none; /* visible cuando la navegación se colapsa */
   width: 40px;
   height: 40px;
   border-radius: 12px;
@@ -172,10 +177,7 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-.ing-ddBtn--decorative {
-  cursor: default;
-  pointer-events: none;
-}
+
 
 /* Dropdown desktop */
 .ing-dropdown {
@@ -304,786 +306,90 @@
 
 
 /* ====== RESPONSIVE (MÓVIL COMO LA REFERENCIA) ====== */
+
+.ing-iconImg { width: 36px; height: 36px; object-fit: contain; display: block; }
+.ing-title { font-size: 38px; line-height: 1.2; padding-bottom: 2px; }
+.ing-titleInline { display: none; }
+.ing-top-actions { flex-shrink: 0; }
+.ing-ddLink, .ing-mobileLink { font-family: 'Onest', sans-serif; font-weight: 500; }
+.ing-dropdown { visibility: hidden; max-height: calc(100dvh - var(--nav-height, 192px)); overflow-y: auto; }
+.ing-dropdown.open { visibility: visible; }
+.ing-mobilePanel { visibility: hidden; }
+.ing-mobilePanel.open {
+  visibility: visible;
+  max-height: max(0px, calc(100dvh - var(--nav-height, 184px)));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.ing-burger { align-items: center; justify-content: center; padding: 0; flex-shrink: 0; }
+.ing-mobileDdBtn { flex-shrink: 0; }
+.ing-mobileLink, .ing-mobileSublink { box-sizing: border-box; min-height: 44px; }
+.ing-mobileLink { min-width: 0; }
+
+@media (min-width: 768px) {
+  /* Match the right inset to the visible crest, including its transparent canvas. */
+  .ing-topbar { padding-right: calc(18px - 9px + 180px * 0.221354); }
+}
+
+@media (min-width: 1400px) {
+  .ing-social { margin-right: 0; }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+  .ing-title { font-size: clamp(25px, 2.7vw, 38px); }
+}
+
+/* Keep the full navigation for screens with room for all seven links. */
+@media (max-width: 1399px) {
+  .ing-burger { display: inline-flex; width: 52px; height: 52px; }
+  .ing-burger svg { width: 26px; height: 26px; }
+  .ing-menubar { display: none; }
+  .ing-mobilePanel { display: block; }
+}
+
 @media (max-width: 767px) {
-  /* ====== TOPBAR más compacto ====== */
-  .ing-topbar {
-    height: auto;
-    padding: 12px 12px 10px;   /* antes 18px 16px 14px */
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;                 /* antes 14px */
-  }
-
-  /* ====== Marca (logo + título) ====== */
-  .ing-brand {
-    width: 100%;
-    gap: 12px;                 /* antes 14px */
-    align-items: center;
-  }
-
+  .ing-topbar { height: auto; padding: 12px 12px 10px; flex-direction: column; gap: 10px; }
+  .ing-brand { width: fit-content; max-width: 100%; align-self: center; justify-content: center; gap: 12px; }
   .ing-logo {
-    width: 172px !important;    /* antes 92px */
-    height: 92px !important;   /* antes 92px */
-
+    --mobile-logo-width: clamp(140px, 40vw, 163px);
+    width: var(--mobile-logo-width);
+    height: 92px;
+    /* Discount the asset's transparent sides so the visible logo and name
+       are centered together, rather than centering the image canvas. */
+    margin-inline: calc(var(--mobile-logo-width) * -0.222);
   }
-
-  .ing-title {
-    font-family: "Onest", sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-
-    font-size: 18px;           /* antes 34px */
-    line-height: 1.1;          /* un poco más compacto */
-    white-space: normal;
-    overflow: visible;
-    text-overflow: initial;
-    margin: 0;
-  }
-
-  .ing-titleBreak {
-    display: block;
-  }
-
-  /* ====== Acciones (redes + burger) ====== */
-  .ing-top-actions {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;                 /* antes 16px */
-    margin-top: 2px;           /* ayuda a compactar */
-  }
-
-  .ing-social {
-    display: flex;
-    gap: 12px;                 /* antes 16px */
-    margin: 0;
-    transform: none;
-  }
-
-  .ing-iconBtn,
-  .ing-burger {
-    width: 52px !important;    /* antes 56px */
-    height: 52px !important;   /* antes 56px */
-    min-width: 52px !important;
-    min-height: 52px !important;
-    padding: 0 !important;
-    border-radius: 12px;
-    border: 0;
-    background: rgba(255, 255, 255, 0.10);
-  }
-
-  .ing-iconImg {
-    width: 24px;               /* antes 28px */
-    height: 24px;              /* antes 28px */
-  }
-
-  .ing-burger svg {
-    width: 26px;
-    height: 26px;
-    transform: translate(13px, 12px); /* ➡️ derecha | ⬆️ arriba */
-  }
-
-  .ing-iconBtn:hover {
-    background: rgba(255, 0, 0, 0.16);
-    transform: translateY(-1px);
-  }
-
-  /* ====== En móvil, ocultar franja roja desktop ====== */
-  .ing-menubar {
-    display: none;
-  }
-
-  .ing-mobilePanel {
-    display: block;
-  }
+  .ing-title { font-size: clamp(28px, 8.8vw, 38px); white-space: normal; overflow: visible; }
+  .ing-titleBreak { display: block; }
+  .ing-top-actions { width: 100%; justify-content: center; gap: 12px; margin-top: 2px; }
+  .ing-social { gap: 12px; margin: 0; }
+  .ing-iconBtn, .ing-burger { width: 52px; height: 52px; border: 0; border-radius: 12px; background: rgba(255,255,255,.10); }
 }
 
-@media (min-width: 412px) and (max-width: 415px) {
-    .ing-logo {
-    width: 64px;
-    height: 64px;
-    margin-left: 45px;
-  }
+@media (min-width: 500px) and (max-width: 767px) {
+  .ing-titleLines { display: none; }
+  .ing-titleInline { display: inline; font-size: clamp(22px, 4vw, 30px); }
 }
 
-@media (min-width: 429px) and (max-width: 431px) {
-    .ing-logo {
-    width: 64px;
-    height: 64px;
-    margin-left: 50px;
-  }
-}
-
-
-@media (max-width: 420px) {
-
-
-
-  .ing-iconBtn {
-    width: 52px;
-    height: 52px;
-  }
-
-  .ing-burger {
-    width: 70px;
-    height: 60px;
-  }
-}
-
-.ing-iconImg {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  display: block;
-}
-
-.ing-ddLink,
-.ing-mobileLink {
-  font-family: 'Onest', sans-serif;
-  font-weight: 500;
-}
-
-
-.ing-title {
-  font-size: 38px;
-  line-height: 1.05;
-  
-}
-
-
-/* ==============================
-   TABLET / MEDIUM (767–1227px)
-   Mantener vista desktop pero compacta
-   ============================== */
-@media (min-width: 767px) and (max-width: 1227px) {
-  /* Mantén la franja roja visible */
-
-  .ing-title {
-  font-size: 25px;
-  line-height: 1.05;
-}
-
-  .ing-menubar {
-    display: flex;
-  }
-
-  /* El menú debe caber completo */
-  .ing-menuList {
-    gap: 0;                 /* menos separación entre items */
-    flex-wrap: nowrap;      /* no queremos que baje a 2 líneas */
-    justify-content: center;
-  }
-
-  /* Texto y espacio de los links (AQUÍ está lo principal) */
-  .ing-link {
-    font-size: 14px;        /* baja el tamaño */
-    padding: 0 8px;         /* menos padding horizontal */
-    height: 48px;           /* se mantiene la altura */
-  }
-
-  /* El bloque que incluye el link + la flecha */
-  .ing-itemRow {
-    padding: 0 2px;         /* menos margen interno por item */
-    gap: 0;
-  }
-
-  /* Botón flecha más compacto */
-  .ing-ddBtn {
-    width: 28px;
-    height: 28px;
-    border-radius: 10px;
-  }
-
-  .ing-ddBtn svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-/* ==============================
-   MÓVIL / TABLET EN HORIZONTAL
-   ============================== */
-/* =================================
-   LANDSCAPE: título en una sola línea
-   ================================= */
-@media (max-width: 900px) and (orientation: landscape) {
-  .ing-title {
-    white-space: nowrap;
-    font-size: 300px;
-    line-height: 1.1;
-
-  }
-
-  /* 🔑 ESTA ES LA CLAVE */
-  .ing-title br {
-    display: none;   /* elimina saltos forzados */
-  }
-
-  .ing-title span {
-    display: inline; /* vuelve todo de corrido */
-  }
-
-  .ing-brandText {
-    min-width: 0;
-  }
-}
-
-/* =================================
-   MENÚ HAMBURGUESA CON SCROLL
-   ================================= */
-
-@media (max-width: 767px) {
-
-  /* 🔑 ASEGURA QUE EL BOTÓN HAMBURGUESA SE VEA */
-  .ing-burger {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-    .ing-mobilePanel.open {
-    max-height: calc(100vh - 120px); /* ⬅️ deja visible el header */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* scroll suave iOS */
-    padding-bottom: 2px;
-  }
-
-}
-
-
-/* =========================================
-   RANGO INTERMEDIO — TÍTULO CORRIDO
-   (Surface Duo / landscape móvil)
-   ========================================= */
-@media (min-width: 500px) and (max-width: 720px) {
-
-  .ing-topbar {
-    align-items: center;
-    text-align: left;
-  }
-
-  .ing-brand {
-    flex-direction: row;      /* logo + texto en línea */
-    align-items: center;
-    gap: 16px;
-  }
-
-  .ing-title {
-    white-space: nowrap;      /* 🔑 UNA SOLA LÍNEA */
-    font-size: clamp(22px, 40vw, 30px);
-    line-height: 1.1;
-  }
-
-  .ing-titleBreak {
-    display: none;            /* elimina saltos <br> */
-  }
-}
-/* Por defecto (móvil): multilínea */
-.ing-titleInline {
-  display: none;
-  margin-left: 10px;
-}
-
-.ing-titleLines {
-  display: inline;
-}
-
-/* RANGO donde lo quieres corrido (ajusta si quieres) */
-@media (min-width: 500px) and (max-width: 720px) {
-  .ing-titleLines {
-    display: none;           /* ocultar versión multilínea */
-  }
-
-  .ing-titleInline {
-    display: inline;         /* mostrar versión corrida */
-    white-space: nowrap;
-    font-size: clamp(20px, 4vw, 30px);
-    line-height: 1.1;
-  }
-
-  /* Asegura layout horizontal */
-  .ing-brand {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-  }
-
-  .ing-topbar {
-    align-items: center;
-    text-align: left;
-  }
-}
-
-
-
-/* =========================================
-   LÍNEA ROJA EN VISTAS CON HAMBURGUESA
-   ========================================= */
-
-/* =========================================
-   LÍNEA ROJA QUE SALE DEL NAVBAR (MÓVIL)
-   ========================================= */
-@media (max-width: 767px) {
-
-  .ing-topbar {
-    position: relative;
-    z-index: 10; /* asegura que quede arriba */
-  }
-
-  .ing-topbar::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;              /* 🔑 SALE del navbar */
-    width: 100%;
-    height: 6px;               /* grosor visible */
-    background-color: #2F3E52; /* rojo institucional */
-  }
-
-}
-/* =========================================
-   FIX: evitar título duplicado
-   Por defecto: SOLO multilínea
-   ========================================= */
-.ing-titleInline { display: none !important; }
-.ing-titleLines  { display: inline !important; }
-
-/* Confirma que en móvil normal se mantenga multilínea */
-@media (max-width: 767px) {
-  .ing-titleInline { display: none !important; }
-  .ing-titleLines  { display: inline !important; }
-}
-
-/* =========================================
-   SOLO en este rango: título CORRIDO
-   (ajusta el rango si quieres)
-   ========================================= */
-@media (min-width: 500px) and (max-width: 720px) {
-  .ing-titleLines  { display: none !important; }
-  .ing-titleInline { display: inline !important; }
-
-  .ing-titleInline {
-    white-space: nowrap;
-    font-size: clamp(20px, 4vw, 30px);
-    line-height: 1.1;
-  }
-}
-
-
-/* ==============================
-   📱 MÓVIL HORIZONTAL (LANDSCAPE)
-   Compactar navbar + 1 sola línea
-   ============================== */
-@media (max-width: 900px) and (orientation: landscape) {
-  /* El bloque azul NO en columna */
-  .ing-topbar {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    height: 70px !important;
-    padding: 0 12px !important;
-    gap: 10px !important;
-  }
-
-  /* Marca en una fila */
-  .ing-brand {
-    width: auto !important;
-    flex: 1 1 auto !important;
-    gap: 10px !important;
-  }
-
-  /* Quita empujones raros */
-  .ing-logo {
-    width: 52px !important;
-    height: 52px !important;
-    margin-left: -18px !important;
-  }
-
-  /* Título: usa versión corrida */
-  .ing-titleLines { display: none !important; }
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  /* Acciones a la derecha */
-  .ing-top-actions {
-    width: auto !important;
-    justify-content: flex-end !important;
-    gap: 10px !important;
-    margin-top: 0 !important;
-  }
-
-  .ing-social {
-    gap: 10px !important;
-    margin-right: 0 !important;
-  }
-
-  /* Botones más chicos */
-  .ing-iconBtn,
-  .ing-burger {
-    width: 42px !important;
-    height: 42px !important;
-    min-width: 42px !important;
-    min-height: 42px !important;
-    border-radius: 12px !important;
-  }
-
-  .ing-iconImg {
-    width: 22px !important;
-    height: 22px !important;
-  }
-
-  /* Tu transform estaba empujando el ícono en landscape */
-  .ing-burger svg {
-    width: 22px !important;
-    height: 22px !important;
-    transform: none !important;
-  }
-
-  /* Línea roja más delgada en horizontal */
-  .ing-topbar::after {
-    bottom: -4px !important;
-    height: 4px !important;
-
-  }
-
-  /* Panel móvil: que calcule con el nuevo header */
-  .ing-mobilePanel.open {
-    max-height: calc(100vh - 74px) !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-    .ing-burger {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .ing-burger svg {
-    transform: none !important;
-    display: block !important;
-    margin: 0 !important;
-  }
-
-  
-}
-
-
-/* 📱 iPhone/Android horizontal (altura baja) => forzar modo móvil */
+/* Short landscape screens need the same usable, scrollable menu at any width. */
 @media (max-height: 480px) and (orientation: landscape) {
-
-  /* 1) Oculta la franja roja desktop */
-  .ing-menubar { 
-    display: none !important; 
-  }
-
-  /* 2) Muestra hamburguesa + panel móvil */
-  .ing-burger { 
-    display: inline-flex !important; 
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .ing-mobilePanel { 
-    display: block !important; 
-  }
-
-  /* 3) Compacta topbar */
-  .ing-topbar {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    height: 70px !important;
-    padding: 0 12px !important;
-    gap: 10px !important;
-  }
-
-  .ing-brand {
-    width: auto !important;
-    flex: 1 1 auto !important;
-    gap: 10px !important;
-  }
-
-  .ing-logo {
-    width: 102px !important;
-    height: 102px !important;
-    margin-left: -13px !important;
-  }
-
-  /* título corrido */
-  .ing-titleLines { display: none !important; }
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  .ing-top-actions {
-    width: auto !important;
-    justify-content: flex-end !important;
-    gap: 10px !important;
-    margin-top: 0 !important;
-  }
-
-  .ing-social {
-    gap: 10px !important;
-    margin-right: 0 !important;
-  }
-
-  .ing-iconBtn,
-  .ing-burger {
-    width: 42px !important;
-    height: 42px !important;
-    min-width: 42px !important;
-    min-height: 42px !important;
-    border-radius: 12px !important;
-  }
-
-  .ing-iconImg {
-    width: 22px !important;
-    height: 22px !important;
-  }
-
-  .ing-burger svg {
-    width: 22px !important;
-    height: 22px !important;
-    transform: none !important;
-    display: block !important;
-    margin: 0 !important;
-  }
-
-  /* si quieres: quitar línea roja flotante */
-  .ing-topbar::after { 
-    display: none !important; 
-  }
-
-  /* panel abierto con scroll, sin tapar */
-  .ing-mobilePanel.open {
-    max-height: calc(100vh - 74px) !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-    .ing-iconBtn {
-    background: rgba(255, 255, 255, 0.12) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  }
+  .ing-topbar { height: 70px; padding: 0 12px; flex-direction: row; gap: 10px; }
+  .ing-brand { width: auto; flex: 1; justify-content: flex-start; gap: 10px; }
+  .ing-logo { width: 102px; height: 70px; margin-left: -13px; margin-right: -32px; }
+  .ing-title { min-width: 0; font-size: 18px; }
+  .ing-titleLines { display: none; }
+  .ing-titleInline { display: inline; white-space: normal; font-size: 18px; padding-left: 10px; }
+  .ing-top-actions { width: auto; gap: 10px; margin: 0; }
+  .ing-social { gap: 10px; margin: 0; }
+  .ing-iconBtn, .ing-burger { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.12); }
+  .ing-iconImg { width: 22px; height: 22px; }
+  .ing-burger { display: inline-flex; }
+  .ing-burger svg { width: 22px; height: 22px; }
+  .ing-menubar { display: none; }
+  .ing-mobilePanel { display: block; }
 }
 
-.ing-title{
-  line-height: 1.2 !important;      /* 🔑 evita cortar g, j, p, q */
-  padding-bottom: 2px !important;   /* 🔑 espacio para descendentes */
-  overflow: visible !important;     /* por si algún media query la vuelve a ocultar */
-  display: inline-block !important; /* asegura que respete el alto real */
-}
-
-
-/* Solucionamos el logo del NavBar */
-
-@media (min-width: 374px) and (max-width: 376px) {
-  .ing-logo {
-    width: 140px;
-    height: 140px;
-    margin-left: 10px;
-    margin-right: -40px;
-  }
-}
-
-@media (min-width: 389px) and (max-width: 390px) {
-  .ing-logo {
-    width: 140px;
-    height: 140px;
-    margin-left:15px;
-        margin-right: -40px;
-  }
-}
-
-@media (min-width: 411px) and (max-width: 431px) {
-  .ing-logo {
-    width: 140px;
-    height: 140px;
-    margin-left: 25px;
-    margin-right: -35px;
-  }
-}
-
-@media (min-width: 359px) and (max-width: 361px) {
-  .ing-logo {
-    width: 140px;
-    height: 140px;
-    margin-left: 0px;
-    margin-right: -40px;
-  }
-}
-
-@media (min-width: 767px) and (max-width: 1280px) {
-  .ing-logo {
-    width: 180px;
-    height: 180px;
-    margin-left: -8px;
-    margin-right: -40px;
-  }
-
-}
-
-@media (min-width: 1024px) and (max-width: 1280px) {
-  .ing-logo {
-    width: 180px;
-    height: 180px;
-    margin-left: -5px;
-    margin-right: -40px;
-  }
-    .ing-link {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 539px) and (max-width: 541px) {
-  .ing-logo {
-    width: 180px;
-    height: 180px;
-    margin-left: 20px;
-    margin-right: -40px;
-  }
-  /* Título: usa versión corrida */
-  .ing-titleLines { 
-      display: inline !important;
-    white-space: nowrap !important;
-    font-size: 38px !important;
-    line-height: 1 !important; }
-  .ing-titleInline {
-    display: none !important;
-  }
-
-}
-
-@media (min-width: 343px) and (max-width: 345px) {
-  .ing-logo {
-    width: 140px;
-    height: 140px;
-    margin-left: -10px;
-    margin-right: -40px;
-  }
-}
-
-@media (min-width: 719px) and (max-width: 721px) {
-  .ing-logo {
-    width: 180px;
-    height: 180px;
-    margin-left: 100px;
-    margin-right: -40px;
-  }
-  /* Título: usa versión corrida */
-  .ing-titleLines { 
-      display: inline !important;
-    white-space: nowrap !important;
-    font-size: 38px !important;
-    line-height: 1 !important; }
-  .ing-titleInline {
-    display: none !important;
-  }
-
-}
-
-/* En horizontal */
-
-@media (min-width: 843px) and (max-width: 897px) and (orientation: landscape) {
-  /* Título: usa versión corrida */
-  .ing-titleLines {display: none !important;}
-
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-    margin-left: 20px;
-    position: relative;
-    top: -90px;   /* 🔥 lo sube 90px */
-  }
-}
-
-@media (min-width: 914px) and (max-width: 933px) and (orientation: landscape) {
-  /* Título: usa versión corrida */
-  .ing-titleLines {display: none !important;}
-
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-    margin-left: 20px;
-    position: relative;
-  }
-
-}
-
-@media (min-width: 739px) and (max-width: 741px) and (orientation: landscape) {
-  /* Título: usa versión corrida */
-  .ing-titleLines {display: none !important;}
-
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-    margin-left: 5px;
-    position: relative;
-    top: -90px;   /* 🔥 lo sube 90px */
-      letter-spacing: 0px;
-  }
-
-}
-
-@media (min-width: 1365px) and (max-width: 1369px) and (orientation: landscape) {
-  .ing-logo {
-    width: 180px;
-    height: 180px;
-    margin-left: -20px;
-    margin-right: -40px;
-  }
-    .ing-link {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 719px) and (max-width: 721px) and (orientation: landscape) {
-  /* Título: usa versión corrida */
-  .ing-titleLines {display: none !important;}
-
-  .ing-titleInline {
-    display: inline !important;
-    white-space: nowrap !important;
-    font-size: 22px !important;
-    line-height: 1 !important;
-    margin-left: 9px;
-    position: relative;
-
-      letter-spacing: 0px;
-  }
-
-    .ing-logo {
-    width: 100px !important;
-    height: 100px !important;
-
-  }
-
-
-}
-
-/* iPhone 16 Pro */
-@media (min-width: 390px) and (max-width: 410px) {
-    .ing-logo {
-    width: 180px;
-    height: 180px;
-
-    margin-right: -40px;
-  }
+.ing-ddBtn { padding: 0; flex-shrink: 0; }
+@media (pointer: coarse) {
+  .ing-ddBtn { width: 44px; height: 44px; }
 }

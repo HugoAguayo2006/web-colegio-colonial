@@ -105,7 +105,7 @@ export default function Campus() {
   // ✅ Touch devices = móviles + iPads (coarse pointer) => tarjeta debajo del mapa
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 544px)");
+    const mq = window.matchMedia("(max-width: 1100px), (max-height: 700px), (pointer: coarse)");
     const onChange = () => setIsTouchDevice(mq.matches);
     onChange();
     mq.addEventListener?.("change", onChange);
@@ -196,7 +196,8 @@ export default function Campus() {
     if (!mapEl) return;
 
     const top = mapEl.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: top - 300, behavior: "smooth" });
+    const navHeight = document.querySelector(".ing-nav")?.getBoundingClientRect().height || 0;
+    window.scrollTo({ top: top - navHeight - 16, behavior: "smooth" });
   };
 
 const resetMapView = () => {

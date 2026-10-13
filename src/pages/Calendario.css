@@ -3,7 +3,7 @@
 /* =========================
    🎨 Colegio Colonial tokens
    ========================= */
-:root{
+.cccal{
   /* Institucional */
   --cc-blue: #2F3E52;     /* azul institucional */
   --cc-blueDeep: #223043; /* navy profundo */
@@ -701,39 +701,21 @@
 }
 
 /* Tus tweaks de portrait */
-@media screen and (min-width: 300px) and (max-width: 400px) and (orientation: portrait){
-  .cccal{ margin-top: 30px; }
-}
-@media screen and (min-width: 344px) and (max-width: 400px) and (orientation: portrait){
-  .cccal{ margin-top: 0px; }
-}
-@media screen and (min-width: 535px) and (max-width: 540px) and (orientation: portrait){
-  .cccal{ margin-top: -15px; }
-}
-
-
-@media (min-width: 340px) and (max-width: 395px) {
-  .cccal{
-    margin-top: -20px;
-  }
-}
-
-@media (min-width: 540px) and (max-width: 600px) {
-    .cccal{
-    margin-top: -20px;
-  }
-}
-
-@media (min-width: 720px) and (max-width: 1280px) {
-    .cccal{
-    margin-top: -20px;
-  }
-}
 
 /* ROTADOS */
 
-@media (min-width: 660px) and (max-width: 740px) and (orientation: landscape) {
-      .cccal{
-    margin-top: -30px;
-  }
+.cccal__filters { box-sizing: border-box; }
+.cccal__filters > *, .cccal__layout > * { min-width: 0; }
+.cccal .dow, .cccal .grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.cccal .cell, .cccal .dow__cell { min-width: 0; }
+.cccal__calTop, .eventCard__top, .listRow__top { flex-wrap: wrap; }
+.cccal .monthNav { min-width: 0; }
+.cccal .iconBtn { flex-shrink: 0; }
+@media (max-width: 520px) {
+  .cccal .dow__cell { padding-inline: 2px; text-align: center; }
+  .cccal .cell { padding-inline: 3px; }
+  .cccal .cell__top { flex-wrap: wrap; gap: 3px; }
+  .cccal .cell__count { padding: 2px 4px; }
+  .cccal .cell__dots { gap: 3px; }
+  .cccal__input { width: 100%; box-sizing: border-box; font-size: 16px; }
 }

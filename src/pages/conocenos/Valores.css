@@ -1,4 +1,4 @@
-:root{
+.val{
   --col-blue:#2F3E52;
   --col-red:#8B0000;
   --col-ice:#F4F6F9;
@@ -456,4 +456,11 @@
   .val-man-grid{ grid-template-columns: 1fr; }
   .val-ribbon{ display: none;}
 
+}
+
+.val-man-grid > *, .val-seal-body { min-width: 0; }
+.val-dot, .val-ico { flex-shrink: 0; }
+@media (max-width: 560px) {
+  .val-seal { flex-direction: column; border-radius: var(--radius); }
+  .val-seal-body { padding: 12px 16px; }
 }

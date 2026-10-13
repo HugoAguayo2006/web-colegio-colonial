@@ -370,3 +370,5 @@
     justify-content: flex-start;
   }
 }
+.mv2-icon { flex: 0 0 52px; }
+.mv2-card-top > :last-child { min-width: 0; }

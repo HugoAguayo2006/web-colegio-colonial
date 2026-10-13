@@ -5,7 +5,7 @@
    Rojo: #8B0000
 ========================= */
 
-:root {
+.nf-page {
   --cc-blue: #2f3e52;
   --cc-red: #8b0000;
   --cc-ink: #0f172a;
@@ -351,34 +351,6 @@
 /* solucion del responsivo */
 
 /* Celulares */
-
-@media (min-width: 340px) and (max-width: 350px) {
-
-}
-
-@media (min-width: 355px) and (max-width: 370px) {
-
-}
-
-@media (min-width: 370px) and (max-width: 385px) {
-
-}
-
-@media (min-width: 386px) and (max-width: 395px) {
-
-}
-
-@media (min-width: 410px) and (max-width: 420px) {
-
-}
-
-@media (min-width: 421px) and (max-width: 440px) {
-
-}
-
-@media (min-width: 530px) and (max-width: 730px) {
-
-}
 
 /* IPADS */
 

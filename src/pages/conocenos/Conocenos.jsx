@@ -47,7 +47,7 @@ const SECTIONS = [
 
 export default function Conocenos() {
   return (
-    <main className="cc-page">
+    <main className="cn-page">
       <Helmet>
         <html lang="es-MX" />
         <title>Conócenos | Colegio Colonial Querétaro</title>
@@ -108,48 +108,48 @@ export default function Conocenos() {
       </Helmet>
 
       {/* HERO */}
-      <section className="cc-hero">
-        <div className="cc-hero-bg" aria-hidden="true" />
+      <section className="cn-hero">
+        <div className="cn-hero-bg" aria-hidden="true" />
 
-        <div className="cc-hero-wrap">
+        <div className="cn-hero-wrap">
           {/* IZQUIERDA: TARJETA GLASS */}
           <aside
-            className="cc-hero-mock"
+            className="cn-hero-mock"
             aria-label="Colegio Colonial - vista general"
           >
-            <div className="cc-mock-top">
-              <div className="cc-mock-brand">Colegio Colonial</div>
-              <div className="cc-mock-chip">Conócenos</div>
+            <div className="cn-mock-top">
+              <div className="cn-mock-brand">Colegio Colonial</div>
+              <div className="cn-mock-chip">Conócenos</div>
             </div>
 
             {/* Collage */}
-            <div className="cc-mock-collage">
-              <div className="cc-mock-img cc-mock-img-1" />
-              <div className="cc-mock-img cc-mock-img-2" />
-              <div className="cc-mock-img cc-mock-img-3" />
+            <div className="cn-mock-collage">
+              <div className="cn-mock-img cn-mock-img-1" />
+              <div className="cn-mock-img cn-mock-img-2" />
+              <div className="cn-mock-img cn-mock-img-3" />
             </div>
 
             {/* Pills */}
-            <div className="cc-mock-pills">
-              <div className="cc-mock-pill">
-                <div className="cc-pill-title">Historia</div>
-                <div className="cc-pill-sub">Identidad + tradición</div>
+            <div className="cn-mock-pills">
+              <div className="cn-mock-pill">
+                <div className="cn-pill-title">Historia</div>
+                <div className="cn-pill-sub">Identidad + tradición</div>
               </div>
 
-              <div className="cc-mock-pill">
-                <div className="cc-pill-title">Modelo</div>
-                <div className="cc-pill-sub">Aprendizaje integral</div>
+              <div className="cn-mock-pill">
+                <div className="cn-pill-title">Modelo</div>
+                <div className="cn-pill-sub">Aprendizaje integral</div>
               </div>
 
-              <div className="cc-mock-pill">
-                <div className="cc-pill-title">Valores</div>
-                <div className="cc-pill-sub">Respeto y compromiso</div>
+              <div className="cn-mock-pill">
+                <div className="cn-pill-title">Valores</div>
+                <div className="cn-pill-sub">Respeto y compromiso</div>
               </div>
             </div>
           </aside>
 
           {/* DERECHA: COPY */}
-          <div className="cc-hero-copy">
+          <div className="cn-hero-copy">
             <h1>Conócenos: tradición que forma, innovación que impulsa.</h1>
 
             <p>
@@ -157,27 +157,27 @@ export default function Conocenos() {
               nuestras secciones clave y descubre lo que nos distingue.
             </p>
 
-            <div className="cc-hero-actions">
-              <NavLink to="/inscripciones" className="cc-btn cc-btn-primary">
+            <div className="cn-hero-actions">
+              <NavLink to="/inscripciones" className="cn-btn cn-btn-primary">
                 Iniciar Inscripción
               </NavLink>
-              <NavLink to="/contacto" className="cc-btn cc-btn-ghost">
+              <NavLink to="/contacto" className="cn-btn cn-btn-ghost">
                 Agendar visita
               </NavLink>
             </div>
 
-            <div className="cc-hero-stats">
-              <div className="cc-stat">
-                <div className="cc-stat-num">+6</div>
-                <div className="cc-stat-label">Secciones clave</div>
+            <div className="cn-hero-stats">
+              <div className="cn-stat">
+                <div className="cn-stat-num">+6</div>
+                <div className="cn-stat-label">Secciones clave</div>
               </div>
-              <div className="cc-stat">
-                <div className="cc-stat-num">100%</div>
-                <div className="cc-stat-label">Enfoque integral</div>
+              <div className="cn-stat">
+                <div className="cn-stat-num">100%</div>
+                <div className="cn-stat-label">Enfoque integral</div>
               </div>
-                            <div className="cc-stat">
-                <div className="cc-stat-num">100%</div>
-                <div className="cc-stat-label">Educación católica</div>
+                            <div className="cn-stat">
+                <div className="cn-stat-num">100%</div>
+                <div className="cn-stat-label">Educación católica</div>
               </div>
             </div>
           </div>
@@ -187,9 +187,9 @@ export default function Conocenos() {
       <div className="separator-blue"></div>
 
       {/* CARDS */}
-      <section className="cc-section">
-        <div className="cc-wrap">
-          <header className="cc-head">
+      <section className="cn-section">
+        <div className="cn-wrap">
+          <header className="cn-head">
             <h2>Explora nuestras secciones</h2>
             <p>
               Un vistazo rápido a lo más importante. Entra a cada apartado para
@@ -197,23 +197,23 @@ export default function Conocenos() {
             </p>
           </header>
 
-          <div className="cc-grid">
+          <div className="cn-grid">
             {SECTIONS.map((s) => (
-              <article key={s.title} className={`cc-card cc-${s.tone}`}>
-                <div className="cc-card-top">
-                  <div className="cc-icon" aria-hidden="true">
+              <article key={s.title} className={`cn-card cn-${s.tone}`}>
+                <div className="cn-card-top">
+                  <div className="cn-icon" aria-hidden="true">
                     {s.icon}
                   </div>
-                  <div className="cc-pill">{s.title}</div>
+                  <div className="cn-pill">{s.title}</div>
                 </div>
 
-                <p className="cc-card-desc">{s.desc}</p>
+                <p className="cn-card-desc">{s.desc}</p>
 
-                <NavLink to={s.to} className="cc-card-link">
+                <NavLink to={s.to} className="cn-card-link">
                   Ver más <span aria-hidden="true">→</span>
                 </NavLink>
 
-                <div className="cc-card-glow" aria-hidden="true" />
+                <div className="cn-card-glow" aria-hidden="true" />
               </article>
             ))}
           </div>
@@ -221,9 +221,9 @@ export default function Conocenos() {
       </section>
 
       {/* TIMELINE / ROUTE */}
-      <section className="cc-route">
-        <div className="cc-wrap">
-          <header className="cc-head cc-head-light">
+      <section className="cn-route">
+        <div className="cn-wrap">
+          <header className="cn-head cn-head-light">
             <h2>Tu ruta rápida para conocer el Colegio</h2>
             <p>
               Si vienes por primera vez, este recorrido te lleva por lo esencial
@@ -231,64 +231,64 @@ export default function Conocenos() {
             </p>
           </header>
 
-          <ol className="cc-timeline">
+          <ol className="cn-timeline">
 
 
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
+            <li className="cn-step">
+              <div className="cn-step-dot" />
+              <div className="cn-step-card">
                 <h3>1) Cómo enseñamos</h3>
                 <p>
                   Modelo educativo: lo académico + lo humano + habilidades para
                   la vida.
                 </p>
-                <NavLink to="/conocenos/modelo-educativo" className="cc-mini-link">
+                <NavLink to="/conocenos/modelo-educativo" className="cn-mini-link">
                   Ir a Modelo →
                 </NavLink>
               </div>
             </li>
 
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
+            <li className="cn-step">
+              <div className="cn-step-dot" />
+              <div className="cn-step-card">
                 <h3>2) Propósito y dirección</h3>
                 <p>Misión y visión que guían cada proyecto y decisión.</p>
-                <NavLink to="/conocenos/mision-vision" className="cc-mini-link">
+                <NavLink to="/conocenos/mision-vision" className="cn-mini-link">
                   Ir a Misión y Visión →
                 </NavLink>
               </div>
             </li>
 
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
+            <li className="cn-step">
+              <div className="cn-step-dot" />
+              <div className="cn-step-card">
                 <h3>3) Lo que vivimos</h3>
                 <p>Valores que se reflejan en la convivencia y el crecimiento.</p>
-                <NavLink to="/conocenos/valores" className="cc-mini-link">
+                <NavLink to="/conocenos/valores" className="cn-mini-link">
                   Ir a Valores →
                 </NavLink>
               </div>
             </li>
 
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
+            <li className="cn-step">
+              <div className="cn-step-dot" />
+              <div className="cn-step-card">
                 <h3>4) Nuestras sedes</h3>
                 <p>
                   Otros campus y espacios para aprender, crear y convivir.
                 </p>
-                <NavLink to="/conocenos/otros-campus" className="cc-mini-link">
+                <NavLink to="/conocenos/otros-campus" className="cn-mini-link">
                   Ir a Otros Campus →
                 </NavLink>
               </div>
             </li>
 
-            <li className="cc-step">
-              <div className="cc-step-dot" />
-              <div className="cc-step-card">
+            <li className="cn-step">
+              <div className="cn-step-dot" />
+              <div className="cn-step-card">
                 <h3>5) Información institucional</h3>
                 <p>Consulta la Clave de Centro de Trabajo (CCT).</p>
-                <NavLink to="/conocenos/clave-de-centro-de-trabajo" className="cc-mini-link">
+                <NavLink to="/conocenos/clave-de-centro-de-trabajo" className="cn-mini-link">
                   Ir a CCT →
                 </NavLink>
               </div>
@@ -298,21 +298,21 @@ export default function Conocenos() {
       </section>
 
       {/* CTA */}
-      <section className="cc-cta">
-        <div className="cc-wrap">
-          <div className="cc-cta-box">
-            <div className="cc-cta-left">
+      <section className="cn-cta">
+        <div className="cn-wrap">
+          <div className="cn-cta-box">
+            <div className="cn-cta-left">
               <h2>¿Listo para dar el siguiente paso?</h2>
               <p>
                 Inicia tu proceso o agenda una visita. Te acompañamos en todo el
                 camino.
               </p>
             </div>
-            <div className="cc-cta-actions">
-              <NavLink to="/inscripciones" className="cc-btn cc-btn-primary">
+            <div className="cn-cta-actions">
+              <NavLink to="/inscripciones" className="cn-btn cn-btn-primary">
                 Inscripciones
               </NavLink>
-              <NavLink to="/contacto" className="cc-btn cc-btn-primary">
+              <NavLink to="/contacto" className="cn-btn cn-btn-primary">
                 Contáctanos
               </NavLink>
             </div>

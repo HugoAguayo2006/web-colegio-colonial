@@ -13,7 +13,7 @@ export default function ImageModal() {
 
       if (target.tagName !== "IMG") return;
       if (target.closest(".imgmodal")) return;
-      if (target.hasAttribute("data-nozoom")) return;
+      if (target.closest("[data-nozoom], .lb")) return;
       if (target.closest("a")) return;
 
       setImageSrc(target.currentSrc || target.src);
@@ -35,7 +35,7 @@ export default function ImageModal() {
   }, []);
 
   /* =====================================================
-     🚫 Bloquear scroll + calcular offset del navbar
+     🚫 Bloquear scroll mientras el visor cubre la pantalla
      ===================================================== */
   useEffect(() => {
     if (!imageSrc) return;
@@ -44,30 +44,8 @@ export default function ImageModal() {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // calcular “rango” (navbar height + margen)
-    const nav =
-      document.querySelector("[data-navbar]") ||
-      document.querySelector(".navbar") ||
-      document.querySelector("header");
-
-    const navH = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
-    const topOffset = navH + 16; // margen extra
-    document.documentElement.style.setProperty("--imgmodal-top", `${topOffset}px`);
-
-    // también recalcular si cambia el tamaño (responsive)
-    const onResize = () => {
-      const n = nav
-        ? Math.round(nav.getBoundingClientRect().height)
-        : (document.querySelector("[data-navbar], .navbar, header")?.getBoundingClientRect().height || 0);
-      document.documentElement.style.setProperty("--imgmodal-top", `${Math.round(n) + 16}px`);
-    };
-
-    window.addEventListener("resize", onResize);
-
     return () => {
       document.body.style.overflow = prevOverflow;
-      document.documentElement.style.removeProperty("--imgmodal-top");
-      window.removeEventListener("resize", onResize);
     };
   }, [imageSrc]);
 

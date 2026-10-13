@@ -836,3 +836,8 @@
 margin-top: -30px;
 }
 }
+
+.vc-calCard { width: auto; max-width: 420px; flex: 1; min-width: 0; }
+.vc-calCard::before { max-width: 100%; right: 0; }
+.vc-btn { box-sizing: border-box; max-width: 100%; text-align: center; }
+.vc-calItem { grid-template-columns: 64px minmax(0, 1fr); }

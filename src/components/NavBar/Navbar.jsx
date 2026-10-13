@@ -1,5 +1,5 @@
  // src/components/Navbar/Navbar.jsx
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
@@ -94,12 +94,36 @@ export default function Navbar() {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const topbar = nav.querySelector(".ing-topbar");
+    const menubar = nav.querySelector(".ing-menubar");
+    const separator = nav.querySelector(".separator-blue-1");
+    const updateHeight = () => {
+      const height = [topbar, menubar, separator].reduce(
+        (sum, el) => sum + el.getBoundingClientRect().height, 0
+      );
+      document.documentElement.style.setProperty("--nav-height", `${height}px`);
+    };
+    const observer = new ResizeObserver(updateHeight);
+    [topbar, menubar, separator].forEach((el) => observer.observe(el));
+    updateHeight();
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--nav-height");
+    };
+  }, []);
+
   useEffect(() => {
-    function onResize() {
-      if (window.innerWidth > 768) setMobileOpen(false);
-    }
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const mobileLayout = window.matchMedia(
+      "(max-width: 1399px), (max-height: 480px) and (orientation: landscape)"
+    );
+    const onChange = () => {
+      setMobileOpen(false);
+      setOpenDropdown(null);
+    };
+    mobileLayout.addEventListener("change", onChange);
+    return () => mobileLayout.removeEventListener("change", onChange);
   }, []);
 
   const toggleDropdown = (id) => {
@@ -113,7 +137,7 @@ export default function Navbar() {
 
   // ====== NUEVO: abrir dropdown con hover/focus (desktop) ======
   const openOnHover = (id, hasChildren) => {
-    if (!hasChildren) return;
+    if (!hasChildren || !window.matchMedia("(hover: hover)").matches) return;
     setOpenDropdown(id);
   };
 
@@ -143,7 +167,7 @@ export default function Navbar() {
     `ing-mobileSublink${isActive ? " is-active" : ""}`;
 
   return (
-    <header className="ing-nav" ref={navRef}>
+    <header className={`ing-nav${mobileOpen ? " ing-nav--menu-open" : ""}`} ref={navRef}>
       {/* ====== FRANJA / BLOQUE AZUL ====== */}
       <div className="ing-topbar">
         <NavLink
@@ -239,6 +263,7 @@ export default function Navbar() {
             type="button"
             aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
             onClick={() => {
               setMobileOpen((v) => !v);
               setOpenDropdown(null);
@@ -264,7 +289,9 @@ export default function Navbar() {
                   className={`ing-item ${hasChildren ? "has-children" : ""}`}
                   onMouseEnter={() => openOnHover(id, hasChildren)}
                   onMouseLeave={() => closeOnLeave(hasChildren)}
-                  onFocusCapture={() => openOnHover(id, hasChildren)}
+                  onFocusCapture={(e) => {
+                    if (hasChildren && !e.target.closest(".ing-ddBtn")) setOpenDropdown(id);
+                  }}
                   onBlurCapture={(e) => closeOnBlur(e, hasChildren)}
                 >
                   <div className="ing-itemRow">
@@ -278,17 +305,21 @@ export default function Navbar() {
                     </NavLink>
 
                     {hasChildren && (
-                      <span
-                        className="ing-ddBtn ing-ddBtn--decorative"
-                        aria-hidden="true"
+                      <button
+                        className="ing-ddBtn"
+                        type="button"
+                        aria-label={`Abrir submenú de ${item.label}`}
+                        aria-expanded={isOpen}
+                        aria-controls={id}
+                        onClick={() => toggleDropdown(id)}
                       >
                         <ChevronDownIcon />
-                      </span>
+                      </button>
                     )}
                   </div>
 
                   {hasChildren && (
-                    <ul className={`ing-dropdown ${isOpen ? "open" : ""}`}>
+                    <ul id={id} className={`ing-dropdown ${isOpen ? "open" : ""}`}>
                       {item.children.map((c) => (
                         <li key={c.href}>
                           <NavLink
@@ -310,7 +341,7 @@ export default function Navbar() {
       </div>
 
       {/* ====== PANEL MÓVIL ====== */}
-      <div className={`ing-mobilePanel ${mobileOpen ? "open" : ""}`}>
+      <div id="mobile-menu" inert={mobileOpen ? undefined : ""} className={`ing-mobilePanel ${mobileOpen ? "open" : ""}`}>
         <nav className="ing-mobileNav" aria-label="Menú móvil">
           <ul className="ing-mobileList">
             {menu.map((item) => {

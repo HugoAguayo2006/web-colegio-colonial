@@ -3,7 +3,7 @@
 /* ============================
    🎨 COLEGIO COLONIAL (Vars)
 ============================ */
-:root{
+.ev{
   --cc-blue: #2F3E52;      /* azul institucional */
   --cc-blueDeep: #233041;  /* azul más profundo */
   --cc-red: #8B0000;       /* rojo institucional */
@@ -498,17 +498,6 @@
 }
 
 /* Tus ajustes de margen (los respeté) */
-@media screen and (min-width: 300px) and (max-width: 400px) and (orientation: portrait){
-  .ev{ margin-top: 0px; }
-}
-
-@media screen and (min-width: 344px) and (max-width: 430px) and (orientation: portrait){
-  .ev{ margin-top: -25px; }
-}
-
-@media screen and (min-width: 535px) and (max-width: 540px) and (orientation: portrait){
-  .ev{ margin-top: -35px; }
-}
 
 
 /* =========================

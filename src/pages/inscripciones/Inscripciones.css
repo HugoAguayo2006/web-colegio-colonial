@@ -1,6 +1,6 @@
 /* src/pages/Inscripciones.css */
 
-:root{
+.insc2{
   --cc-blue: #2F3E52;
   --cc-red: #8B0000;
 
@@ -516,4 +516,11 @@
       "pill pill";
     row-gap: 10px;
   }
+}
+
+.insc2_crestCore { box-sizing: border-box; }
+@media (max-width: 520px) {
+  .insc2_icon { grid-area: icon; }
+  .insc2_cardTitles { grid-area: title; }
+  .insc2_pill { grid-area: pill; justify-self: start; }
 }
